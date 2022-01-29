@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RSS Agregator</title>
 </head>
+
 <body>
-  <div class="container py-5">
-    <form>
-      <h1>RSS агрегатор</h1>
-      <div class="input-group input-group-lg">
-        <input type="text" class="form-control" placeholder="Ссылка RSS Feed" aria-label="">
-        <button class="btn btn-primary" type="submit">Добавить</button>
+  <main>
+    <section class="container-fluid py-5">
+      <form action="" class="rss-form text-body">
+        <h1>RSS агрегатор</h1>
+        <div class="input-group input-group-lg">
+          <input id="url-input" autofocus="" required="" name="url" aria-label="url" class="form-control"
+            placeholder="ссылка RSS" autocomplete="off">
+          <button class="btn btn-primary" type="submit">Добавить</button>
         </div>
-      </div>
-    </form>
-  </div>
-  
+      </form>
+      <p class="mt-2 mb-0 text-muted">Пример: https://ru.hexlet.io/lessons.rss</p>
+      <p class="feedback m-0 position-absolute small text-danger"></p>
+    </section>
+  </main>
 </body>
