@@ -1,5 +1,5 @@
 import i18next from 'i18next';
-import initHandlers from './handlers.js';
+import initWathcer from './watcher.js';
 import resources from './locales/index.js';
 import View from './view';
 
@@ -10,10 +10,7 @@ export default () => {
     },
     form: {
       state: 'filling',
-    },
-    feedback: {
-      isError: false,
-      message: '',
+      error: null,
     },
     feeds: [],
   };
@@ -22,12 +19,13 @@ export default () => {
 
   return i18nextInstance.init({
     lang: initState.app.lang,
+    fallbackLng: initState.app.lang,
     debug: true,
     resources,
   })
     .then(() => {
       const view = new View(i18nextInstance);
-      const state = initHandlers(initState);
+      const state = initWathcer(initState, view);
       view.init(state);
     });
 };
