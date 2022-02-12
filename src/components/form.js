@@ -9,8 +9,9 @@ const validateUrl = (url, urls) => string()
   .catch((e) => ({ isError: true, message: e.message }));
 
 export default class Form {
-  constructor(i18Instance) {
+  constructor(i18Instance, rssReader) {
     this.i18n = i18Instance;
+    this.rssReader = rssReader;
     this.element = document.querySelector('.rss-form');
     this.button = document.querySelector('.btn-primary');
     this.input = document.querySelector('#url-input');
